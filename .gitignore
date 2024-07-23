@@ -2,3 +2,8 @@ build
 dist
 .DS_Store
 CMakeUserPresets.json
+
+# HH
+_rez_build
+.vscode
+.idea

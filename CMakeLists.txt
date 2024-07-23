@@ -33,9 +33,9 @@ endif()
 
 project(MaterialX VERSION ${MATERIALX_LIBRARY_VERSION})
 
-option(MATERIALX_BUILD_PYTHON "Build the MaterialX Python package from C++ bindings. Requires Python 3.9 or greater." OFF)
-option(MATERIALX_BUILD_VIEWER "Build the MaterialX Viewer." OFF)
-option(MATERIALX_BUILD_GRAPH_EDITOR "Build the MaterialX Graph Editor." OFF)
+option(MATERIALX_BUILD_PYTHON "Build the MaterialX Python package from C++ bindings. Requires Python 3.6 or greater." ON)  # Marcelo: was OFF
+option(MATERIALX_BUILD_VIEWER "Build the MaterialX Viewer." ON)  # Marcelo: was OFF
+option(MATERIALX_BUILD_GRAPH_EDITOR "Build the MaterialX Graph Editor." ON)  # Marcelo: was OFF
 option(MATERIALX_BUILD_DOCS "Create HTML documentation using Doxygen. Requires that Doxygen be installed." OFF)
 
 option(MATERIALX_BUILD_GEN_GLSL "Build the GLSL shader generator back-end." ON)
@@ -52,7 +52,7 @@ option(MATERIALX_BUILD_BENCHMARK_TESTS "Build benchmark tests." OFF)
 option(MATERIALX_BUILD_OSOS "Build OSL .oso's of standard library shaders for the OSL Network generator" OFF)
 option(MATERIALX_BUILD_PERFETTO_TRACING "Build with Perfetto tracing support for performance analysis." OFF)
 
-option(MATERIALX_BUILD_SHARED_LIBS "Build MaterialX libraries as shared rather than static." OFF)
+option(MATERIALX_BUILD_SHARED_LIBS "Build MaterialX libraries as shared rather than static." ON)  # Marcelo: was OFF
 option(MATERIALX_BUILD_DATA_LIBRARY "Build generated products from the MaterialX data library." OFF)
 option(MATERIALX_BUILD_MONOLITHIC "Build a single monolithic MaterialX library." OFF)
 option(MATERIALX_BUILD_USE_CCACHE "Enable the use of ccache to speed up build time, if present." ON)
@@ -235,7 +235,7 @@ if(MATERIALX_BUILD_PERFETTO_TRACING)
     set(PERFETTO_SDK_INCLUDE_DIR "${CMAKE_BINARY_DIR}/_deps/perfetto-src/sdk")
     FetchContent_MakeAvailable(perfetto)
     add_definitions(-DMATERIALX_BUILD_PERFETTO_TRACING)
-    
+
     # Define compile flags for perfetto.cc (Perfetto SDK triggers various warnings)
     # These variables are used in source/CMakeLists.txt (monolithic) and MaterialXTrace (non-monolithic)
     # Note: set_source_files_properties is directory-scoped, so we define variables here
@@ -252,7 +252,7 @@ if(MATERIALX_BUILD_PERFETTO_TRACING)
         # -Wno-shadow: Suppress shadow warnings (kDevNull shadows global)
         set(MATERIALX_PERFETTO_COMPILE_FLAGS "-Wno-error -Wno-shadow" CACHE INTERNAL "")
     endif()
-    
+
     message(STATUS "Perfetto tracing support enabled")
 endif()
 
