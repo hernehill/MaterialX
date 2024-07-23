@@ -1,2 +1,7 @@
 build
 dist
+
+# HH
+_rez_build
+.vscode
+.idea
