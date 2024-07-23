@@ -19,7 +19,9 @@ requires = [
     "pybind11",
 ]
 
-private_build_requires = []
+private_build_requires = [
+    "setuptools",
+]
 
 variants = [
     ["python-3.7"],
