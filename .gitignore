@@ -1,3 +1,8 @@
 build
 dist
 .DS_Store
+
+# HH
+_rez_build
+.vscode
+.idea
