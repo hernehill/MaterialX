@@ -49,7 +49,7 @@ option(MATERIALX_BUILD_OCIO "Build OpenColorIO support for shader generators." O
 option(MATERIALX_BUILD_TESTS "Build unit tests." OFF)
 option(MATERIALX_BUILD_BENCHMARK_TESTS "Build benchmark tests." OFF)
 
-option(MATERIALX_BUILD_SHARED_LIBS "Build MaterialX libraries as shared rather than static." ON)  # Marcelo: was OFF
+option(MATERIALX_BUILD_SHARED_LIBS "Build MaterialX libraries as shared rather than static." OFF)  # Marcelo: was OFF
 option(MATERIALX_BUILD_DATA_LIBRARY "Build generated products from the MaterialX data library." OFF)
 option(MATERIALX_BUILD_MONOLITHIC "Build a single monolithic MaterialX library." OFF)
 option(MATERIALX_BUILD_USE_CCACHE "Enable the use of ccache to speed up build time, if present." ON)

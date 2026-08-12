@@ -35,13 +35,20 @@ variants = [
 
 
 def commands():
+    import sys
+    
     env.REZ_MATERIALX_ROOT = "{root}"
     env.MATERIALX_ROOT = "{root}"
     env.MATERIALX_LOCATION = "{root}"
     env.MATERIALX_INCLUDE_DIR = "{root}/include"
 
     env.PATH.append("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib")
+
+    if sys.platform.startswith("linux"):
+        env.LD_LIBRARY_PATH.append("{root}/lib")
+    elif sys.platform.startswith("win"):
+        env.PATH.append("{root}/lib")
+
     env.PKG_CONFIG_PATH.append("{root}/lib/cmake/MaterialX")
     env.PYTHONPATH.append("{root}/python")
 
