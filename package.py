@@ -1,6 +1,6 @@
 name = "materialx"
 
-version = "1.39.4.hh.1.0.0"
+version = "1.39.4.hh.1.0.1"
 
 authors = [
     "ILM & AcademySoftwareFoundation",
@@ -21,6 +21,7 @@ requires = [
 
 private_build_requires = [
     "setuptools",
+    "visual_studio",
 ]
 
 variants = [
