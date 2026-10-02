@@ -1,6 +1,6 @@
 name = "materialx"
 
-version = "1.39.4.hh.1.0.0"
+version = "1.39.4.hh.1.1.0"
 
 authors = [
     "ILM & AcademySoftwareFoundation",
@@ -24,11 +24,10 @@ private_build_requires = [
 ]
 
 variants = [
-    # ["python-3.7"],
     ["python-3.9"],
     ["python-3.10"],
     ["python-3.11"],
-    # ["python-3.12"],
+    ["python-3.13"],
 ]
 
 # NOTE: Run (first time only), after git clone: git submodule update --init --recursive
